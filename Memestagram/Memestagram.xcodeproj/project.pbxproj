@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3415556724CAF1BF00B1B7E4 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3415556624CAF1BF00B1B7E4 /* SignupView.swift */; };
+		3415556924CB056700B1B7E4 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3415556824CB056700B1B7E4 /* TabViewController.swift */; };
 		3420CEA524CA003800F4B64D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420CEA424CA003800F4B64D /* AppDelegate.swift */; };
 		3420CEA724CA003800F4B64D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420CEA624CA003800F4B64D /* SceneDelegate.swift */; };
 		3420CEA924CA003800F4B64D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420CEA824CA003800F4B64D /* ContentView.swift */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		3415556624CAF1BF00B1B7E4 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		3415556824CB056700B1B7E4 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		3420CEA124CA003700F4B64D /* Memestagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memestagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3420CEA424CA003800F4B64D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3420CEA624CA003800F4B64D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			children = (
 				3420CEB824CA009300F4B64D /* HomePage.swift */,
 				3420CEC924CA029400F4B64D /* PostCell.swift */,
+				3415556824CB056700B1B7E4 /* TabViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				3435AF5D24CA122000CC3F2F /* QGrid.swift in Sources */,
 				3420CEB924CA009300F4B64D /* HomePage.swift in Sources */,
 				3420CECA24CA029400F4B64D /* PostCell.swift in Sources */,
+				3415556924CB056700B1B7E4 /* TabViewController.swift in Sources */,
 				3421DC8924CAC56D009F227A /* NotificationCell_Like.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

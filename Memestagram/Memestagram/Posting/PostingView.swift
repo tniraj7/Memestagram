@@ -1,4 +1,6 @@
 import SwiftUI
+import RealmSwift
+import  Firebase
 
 struct PostingView: View {
     
@@ -70,7 +72,32 @@ struct PostingView: View {
     }
     
     func submit() {
+        guard let imageData = uiImage?.jpegData(compressionQuality: 0.1) else { return }
+        let postId = UUID().uuidString
+        let ref = Storage.storage().reference().child("posts").child(postId)
         
+        ref.putData(imageData, metadata: nil) { (metadata, error) in
+            if error == nil {
+                ref.downloadURL { (url, error) in
+                    if error == nil {
+                        let imageHeight = self.uiImage?.size.height ?? 0
+                        let imageWidth = self.uiImage?.size.width ?? 0
+                        let aspectRatio = Double(imageHeight / imageWidth)
+                        
+                        Database.database().reference().child("posts").child(postId)
+                            .updateChildValues([
+                                "imageUrl": url?.absoluteString ?? "",
+                                "id": postId,
+                                "comment": self.description,
+                                "aspectRatio" : aspectRatio,
+                                "date" : Date().iso8601
+                            ])
+                    }
+                }
+            } else {
+                print(error?.localizedDescription)
+            }
+        }
     }
 }
 

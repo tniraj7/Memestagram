@@ -41,7 +41,7 @@ struct PostingView: View {
                     
                     MultilineTextView(text: $description)
                         .cornerRadius(5)
-                        .frame( height: 100, alignment: .leading)
+                        .frame( height: 150, alignment: .leading)
                     
                 }.padding()
                 

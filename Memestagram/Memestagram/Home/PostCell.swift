@@ -22,7 +22,7 @@ struct PostCell: View {
                         
                         Text("1 hr ago")
                             .font(.caption)
-                            .foregroundColor(/*@START_MENU_TOKEN@*/.gray/*@END_MENU_TOKEN@*/)
+                            .foregroundColor(.gray)
                     }
                     
                     Spacer()

@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct SettingsPage: View {
+struct SettingsView: View {
     var body: some View {
         Text("Hello, World!")
     }
@@ -8,6 +8,6 @@ struct SettingsPage: View {
 
 struct SettingsPage_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsPage()
+        SettingsView()
     }
 }

@@ -1,41 +1,41 @@
 import SwiftUI
 
+var exampleData = [
+    PostIdentifiable(),PostIdentifiable(),
+    PostIdentifiable(),PostIdentifiable(),
+    PostIdentifiable(),PostIdentifiable(),
+    PostIdentifiable(),PostIdentifiable(),
+    PostIdentifiable(),PostIdentifiable(),
+    PostIdentifiable(),PostIdentifiable(),
+    PostIdentifiable(),PostIdentifiable(),
+    PostIdentifiable(),PostIdentifiable(),
+    PostIdentifiable(),PostIdentifiable(),
+    PostIdentifiable(),PostIdentifiable(),
+    PostIdentifiable(),PostIdentifiable(),
+    PostIdentifiable(),PostIdentifiable(),
+    PostIdentifiable(),PostIdentifiable(),
+    PostIdentifiable(),PostIdentifiable(),
+    PostIdentifiable(),PostIdentifiable(),
+    PostIdentifiable(),PostIdentifiable(),
+    PostIdentifiable(),PostIdentifiable(),
+    PostIdentifiable(),PostIdentifiable(),
+    PostIdentifiable(),PostIdentifiable(),
+    PostIdentifiable(),PostIdentifiable(),
+    PostIdentifiable(),PostIdentifiable(),
+    PostIdentifiable(),PostIdentifiable(),
+    PostIdentifiable(),PostIdentifiable(),
+    PostIdentifiable(),PostIdentifiable(),
+    PostIdentifiable(),PostIdentifiable(),
+    PostIdentifiable(),PostIdentifiable(),
+    PostIdentifiable(),PostIdentifiable(),
+    PostIdentifiable(),PostIdentifiable(),
+    PostIdentifiable(),PostIdentifiable(),
+]
+
 struct ExploreView: View {
     
     @State var searchText = String()
     @State var isSearching: Bool = false
-    
-    var exampleData = [
-        PostIdentifiable(),PostIdentifiable(),
-        PostIdentifiable(),PostIdentifiable(),
-        PostIdentifiable(),PostIdentifiable(),
-        PostIdentifiable(),PostIdentifiable(),
-        PostIdentifiable(),PostIdentifiable(),
-        PostIdentifiable(),PostIdentifiable(),
-        PostIdentifiable(),PostIdentifiable(),
-        PostIdentifiable(),PostIdentifiable(),
-        PostIdentifiable(),PostIdentifiable(),
-        PostIdentifiable(),PostIdentifiable(),
-        PostIdentifiable(),PostIdentifiable(),
-        PostIdentifiable(),PostIdentifiable(),
-        PostIdentifiable(),PostIdentifiable(),
-        PostIdentifiable(),PostIdentifiable(),
-        PostIdentifiable(),PostIdentifiable(),
-        PostIdentifiable(),PostIdentifiable(),
-        PostIdentifiable(),PostIdentifiable(),
-        PostIdentifiable(),PostIdentifiable(),
-        PostIdentifiable(),PostIdentifiable(),
-        PostIdentifiable(),PostIdentifiable(),
-        PostIdentifiable(),PostIdentifiable(),
-        PostIdentifiable(),PostIdentifiable(),
-        PostIdentifiable(),PostIdentifiable(),
-        PostIdentifiable(),PostIdentifiable(),
-        PostIdentifiable(),PostIdentifiable(),
-        PostIdentifiable(),PostIdentifiable(),
-        PostIdentifiable(),PostIdentifiable(),
-        PostIdentifiable(),PostIdentifiable(),
-        PostIdentifiable(),PostIdentifiable(),
-    ]
     
     var body: some View {
         

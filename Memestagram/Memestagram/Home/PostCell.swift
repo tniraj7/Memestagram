@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct PostCell: View {
-    var i: Int
     
     var body: some View {
         VStack {
@@ -44,6 +43,6 @@ struct PostCell: View {
 
 struct PostCell_Previews: PreviewProvider {
     static var previews: some View {
-        PostCell(i: 1).previewDevice("iPhone 11")
+        PostCell().previewDevice("iPhone 11")
     }
 }

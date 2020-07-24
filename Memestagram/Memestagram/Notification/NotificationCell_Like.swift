@@ -6,14 +6,26 @@ struct NotificationCell_Like: View {
         
         VStack {
             HStack(alignment: .top) {
-                Image("boats")
+                ZStack {
+                    Image("wily")
                     .resizable()
+                    .renderingMode(.original)
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 50, height: 50, alignment: .center)
                     .cornerRadius(5)
+                    
+                    NavigationLink(destination: SinglePostView(), label:  {
+                        EmptyView()
+                    })
+                    .buttonStyle(PlainButtonStyle())
+                    .cornerRadius(5)
+                    .clipped()
+                }
+                
+
                 
                 VStack(alignment: .leading) {
-                    Text("Road Runner liked your post")
+                    Text("Wiley Coyote liked your post")
                         .font(.callout)
                     Text("1 hr ago")
                         .font(.caption)

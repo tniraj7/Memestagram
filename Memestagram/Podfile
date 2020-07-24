@@ -11,5 +11,6 @@ target 'Memestagram' do
 	pod 'Firebase/Messaging'
 	pod 'Firebase/Database'
 	pod 'Firebase/Storage'
+	pod 'RealmSwift'
 end
 

@@ -23,6 +23,7 @@
 		3421DC8924CAC56D009F227A /* NotificationCell_Like.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3421DC8824CAC56D009F227A /* NotificationCell_Like.swift */; };
 		3421DC8B24CACA70009F227A /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3421DC8A24CACA70009F227A /* ProfileHeaderView.swift */; };
 		3435AF5D24CA122000CC3F2F /* QGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3435AF5C24CA122000CC3F2F /* QGrid.swift */; };
+		348EB31524CAE68200DB23FC /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348EB31424CAE68200DB23FC /* LoginPage.swift */; };
 		34A0037224CAB2D50000BC9A /* MultilineTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A0037124CAB2D50000BC9A /* MultilineTextView.swift */; };
 		34A0037424CAB6E10000BC9A /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A0037324CAB6E10000BC9A /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
@@ -46,6 +47,7 @@
 		3421DC8824CAC56D009F227A /* NotificationCell_Like.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell_Like.swift; sourceTree = "<group>"; };
 		3421DC8A24CACA70009F227A /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		3435AF5C24CA122000CC3F2F /* QGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QGrid.swift; sourceTree = "<group>"; };
+		348EB31424CAE68200DB23FC /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
 		34A0037124CAB2D50000BC9A /* MultilineTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineTextView.swift; sourceTree = "<group>"; };
 		34A0037324CAB6E10000BC9A /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +82,7 @@
 		3420CEA324CA003700F4B64D /* Memestagram */ = {
 			isa = PBXGroup;
 			children = (
+				348EB31624CAE6A700DB23FC /* Login */,
 				3420CEC424CA015200F4B64D /* Home */,
 				3420CEC524CA016500F4B64D /* Explore */,
 				3420CEC724CA017A00F4B64D /* Posting */,
@@ -149,6 +152,14 @@
 				3421DC8824CAC56D009F227A /* NotificationCell_Like.swift */,
 			);
 			path = Notification;
+			sourceTree = "<group>";
+		};
+		348EB31624CAE6A700DB23FC /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				348EB31424CAE68200DB23FC /* LoginPage.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				348EB31524CAE68200DB23FC /* LoginPage.swift in Sources */,
 				34A0037424CAB6E10000BC9A /* ImagePicker.swift in Sources */,
 				3420CEC324CA012700F4B64D /* ProfilePage.swift in Sources */,
 				34A0037224CAB2D50000BC9A /* MultilineTextView.swift in Sources */,

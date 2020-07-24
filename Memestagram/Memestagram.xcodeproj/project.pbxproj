@@ -16,10 +16,11 @@
 		3420CEB924CA009300F4B64D /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420CEB824CA009300F4B64D /* HomePage.swift */; };
 		3420CEBB24CA00AB00F4B64D /* PostingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420CEBA24CA00AB00F4B64D /* PostingView.swift */; };
 		3420CEBD24CA00D200F4B64D /* ExplorePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420CEBC24CA00D200F4B64D /* ExplorePage.swift */; };
-		3420CEBF24CA00EB00F4B64D /* NotificationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420CEBE24CA00EB00F4B64D /* NotificationPage.swift */; };
+		3420CEBF24CA00EB00F4B64D /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420CEBE24CA00EB00F4B64D /* NotificationView.swift */; };
 		3420CEC124CA010500F4B64D /* SettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420CEC024CA010500F4B64D /* SettingsPage.swift */; };
 		3420CEC324CA012700F4B64D /* ProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420CEC224CA012700F4B64D /* ProfilePage.swift */; };
 		3420CECA24CA029400F4B64D /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420CEC924CA029400F4B64D /* PostCell.swift */; };
+		3421DC8924CAC56D009F227A /* NotificationCell_Like.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3421DC8824CAC56D009F227A /* NotificationCell_Like.swift */; };
 		3435AF5D24CA122000CC3F2F /* QGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3435AF5C24CA122000CC3F2F /* QGrid.swift */; };
 		34A0037224CAB2D50000BC9A /* MultilineTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A0037124CAB2D50000BC9A /* MultilineTextView.swift */; };
 		34A0037424CAB6E10000BC9A /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A0037324CAB6E10000BC9A /* ImagePicker.swift */; };
@@ -37,10 +38,11 @@
 		3420CEB824CA009300F4B64D /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		3420CEBA24CA00AB00F4B64D /* PostingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostingView.swift; sourceTree = "<group>"; };
 		3420CEBC24CA00D200F4B64D /* ExplorePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorePage.swift; sourceTree = "<group>"; };
-		3420CEBE24CA00EB00F4B64D /* NotificationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPage.swift; sourceTree = "<group>"; };
+		3420CEBE24CA00EB00F4B64D /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		3420CEC024CA010500F4B64D /* SettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPage.swift; sourceTree = "<group>"; };
 		3420CEC224CA012700F4B64D /* ProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePage.swift; sourceTree = "<group>"; };
 		3420CEC924CA029400F4B64D /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		3421DC8824CAC56D009F227A /* NotificationCell_Like.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell_Like.swift; sourceTree = "<group>"; };
 		3435AF5C24CA122000CC3F2F /* QGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QGrid.swift; sourceTree = "<group>"; };
 		34A0037124CAB2D50000BC9A /* MultilineTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineTextView.swift; sourceTree = "<group>"; };
 		34A0037324CAB6E10000BC9A /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -140,7 +142,8 @@
 		3420CEC824CA018400F4B64D /* Notification */ = {
 			isa = PBXGroup;
 			children = (
-				3420CEBE24CA00EB00F4B64D /* NotificationPage.swift */,
+				3420CEBE24CA00EB00F4B64D /* NotificationView.swift */,
+				3421DC8824CAC56D009F227A /* NotificationCell_Like.swift */,
 			);
 			path = Notification;
 			sourceTree = "<group>";
@@ -225,10 +228,11 @@
 				3420CEC124CA010500F4B64D /* SettingsPage.swift in Sources */,
 				3420CEA924CA003800F4B64D /* ContentView.swift in Sources */,
 				3420CEBB24CA00AB00F4B64D /* PostingView.swift in Sources */,
-				3420CEBF24CA00EB00F4B64D /* NotificationPage.swift in Sources */,
+				3420CEBF24CA00EB00F4B64D /* NotificationView.swift in Sources */,
 				3435AF5D24CA122000CC3F2F /* QGrid.swift in Sources */,
 				3420CEB924CA009300F4B64D /* HomePage.swift in Sources */,
 				3420CECA24CA029400F4B64D /* PostCell.swift in Sources */,
+				3421DC8924CAC56D009F227A /* NotificationCell_Like.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

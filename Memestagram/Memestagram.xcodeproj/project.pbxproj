@@ -10,6 +10,7 @@
 		3415556724CAF1BF00B1B7E4 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3415556624CAF1BF00B1B7E4 /* SignupView.swift */; };
 		3415556924CB056700B1B7E4 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3415556824CB056700B1B7E4 /* TabViewController.swift */; };
 		3415556B24CB09F200B1B7E4 /* SinglePostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3415556A24CB09F200B1B7E4 /* SinglePostView.swift */; };
+		3415556D24CB128200B1B7E4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3415556C24CB128200B1B7E4 /* GoogleService-Info.plist */; };
 		3420CEA524CA003800F4B64D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420CEA424CA003800F4B64D /* AppDelegate.swift */; };
 		3420CEA724CA003800F4B64D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420CEA624CA003800F4B64D /* SceneDelegate.swift */; };
 		3420CEA924CA003800F4B64D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420CEA824CA003800F4B64D /* ContentView.swift */; };
@@ -35,6 +36,7 @@
 		3415556624CAF1BF00B1B7E4 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		3415556824CB056700B1B7E4 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		3415556A24CB09F200B1B7E4 /* SinglePostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePostView.swift; sourceTree = "<group>"; };
+		3415556C24CB128200B1B7E4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3420CEA124CA003700F4B64D /* Memestagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memestagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3420CEA424CA003800F4B64D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3420CEA624CA003800F4B64D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 		3420CE9824CA003700F4B64D = {
 			isa = PBXGroup;
 			children = (
+				3415556C24CB128200B1B7E4 /* GoogleService-Info.plist */,
 				3420CEA324CA003700F4B64D /* Memestagram */,
 				3420CEA224CA003700F4B64D /* Products */,
 			);
@@ -230,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3420CEB124CA003A00F4B64D /* LaunchScreen.storyboard in Resources */,
+				3415556D24CB128200B1B7E4 /* GoogleService-Info.plist in Resources */,
 				3420CEAE24CA003A00F4B64D /* Preview Assets.xcassets in Resources */,
 				3420CEAB24CA003A00F4B64D /* Assets.xcassets in Resources */,
 			);

@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ProfilePage: View {
+struct ProfileView: View {
     
     var body: some View {
         NavigationView {
@@ -26,6 +26,6 @@ struct ProfilePage: View {
 
 struct ProfilePage_Previews: PreviewProvider {
     static var previews: some View {
-        ProfilePage()
+        ProfileView()
     }
 }

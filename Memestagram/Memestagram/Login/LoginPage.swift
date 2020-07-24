@@ -28,10 +28,13 @@ struct LoginView: View {
             SecureField("Password", text: self.$password).padding()
             HStack {
                 Text("Don't have an account ?")
-                Button(action: self.signUp, label: { Text(" Sing up now!") })
+                Button(action: self.signUp, label: { Text(" Sign up now!") })
             }
             Spacer()
-        }
+        }.sheet(isPresented: self.$isPresented, content: {
+            SignupView(isPresented: self.$isPresented)
+        })
+        
     }
     
     func signUp() { self.isPresented.toggle() }

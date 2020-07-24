@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3415556724CAF1BF00B1B7E4 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3415556624CAF1BF00B1B7E4 /* SignupView.swift */; };
 		3420CEA524CA003800F4B64D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420CEA424CA003800F4B64D /* AppDelegate.swift */; };
 		3420CEA724CA003800F4B64D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420CEA624CA003800F4B64D /* SceneDelegate.swift */; };
 		3420CEA924CA003800F4B64D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420CEA824CA003800F4B64D /* ContentView.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3415556624CAF1BF00B1B7E4 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		3420CEA124CA003700F4B64D /* Memestagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memestagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3420CEA424CA003800F4B64D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3420CEA624CA003800F4B64D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				348EB31424CAE68200DB23FC /* LoginPage.swift */,
+				3415556624CAF1BF00B1B7E4 /* SignupView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				3420CEC324CA012700F4B64D /* ProfilePage.swift in Sources */,
 				34A0037224CAB2D50000BC9A /* MultilineTextView.swift in Sources */,
 				3420CEA524CA003800F4B64D /* AppDelegate.swift in Sources */,
+				3415556724CAF1BF00B1B7E4 /* SignupView.swift in Sources */,
 				3420CEA724CA003800F4B64D /* SceneDelegate.swift in Sources */,
 				3420CEBD24CA00D200F4B64D /* ExplorePage.swift in Sources */,
 				3420CEC124CA010500F4B64D /* SettingsPage.swift in Sources */,

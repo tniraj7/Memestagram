@@ -37,3 +37,16 @@ extension Object {
         })
     }
 }
+
+func handlePostDictionary(dict: [String: AnyObject]) -> Post {
+    
+    let post = Post()
+    post.id = dict["id"] as? String  ?? ""
+    post.comment = dict["comment"] as? String ?? ""
+    post.date = (dict["date"] as? String ?? "").iso8601
+    post.aspectRatio = dict["aspectRatio"] as? Double ?? 1.0
+    post.imageUrl = dict["imgageUrl"] as? String ?? ""
+    post.writeToRealm()
+    
+    return post
+}

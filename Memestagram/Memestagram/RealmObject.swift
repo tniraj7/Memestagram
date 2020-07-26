@@ -9,7 +9,7 @@ class Post: Object {
     @objc dynamic var user: UserObject? = nil
     @objc dynamic var aspectRatio: Double = 0
     @objc dynamic var date: Date? = nil
-    var isFavorited = RealOptional<Bool>()
+    var isFavorited = RealmOptional<Bool>()
     
     override class func primaryKey() -> String {
         return "id"
@@ -22,8 +22,8 @@ class UserObject: Object {
     @objc dynamic var username: String = ""
     @objc dynamic var profileImageUrl: String = ""
     
-    var isLoggedIn = RealOptional<Bool>()
-    var isFollowing = RealOptional<Bool>()
+    var isLoggedIn = RealmOptional<Bool>()
+    var isFollowing = RealmOptional<Bool>()
     
     override class func primaryKey() -> String {
         return "id"

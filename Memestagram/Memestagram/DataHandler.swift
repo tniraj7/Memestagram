@@ -1,9 +1,19 @@
-//
-//  DataHandler.swift
-//  Memestagram
-//
-//  Created by Tiwari, Niraj | Nero | LPD on 2020/07/26.
-//  Copyright © 2020 NT. All rights reserved.
-//
-
 import Foundation
+import SwiftUI
+import Firebase
+
+
+class DataHandler: ObservableObject {
+    
+    @Published var homePagePost = [Post]()
+    
+    func loadHomePagePosts() {
+        let ref = Database.database().reference()
+        ref.child("posts").observe(.value) { (snapshot) in
+            for snap in snapshot.children.allObjects as! [DataSnapshot] {
+                guard let dict = snap.value as? [String : AnyObject]  else { return }
+                self.homePagePost.append(handlePostDictionary(dict: dict))
+            }
+        }
+    }
+}

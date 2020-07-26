@@ -1,4 +1,5 @@
 import Foundation
+import RealmSwift
 
 extension ISO8601DateFormatter {
     convenience init(_ formatOptions: Options, timeZone: TimeZone = TimeZone(secondsFromGMT: 0)!) {
@@ -18,4 +19,21 @@ extension Date {
 
 extension String {
     var iso8601: Date? { return Formatter.iso8601.date(from: self) }
+}
+
+extension Object {
+    
+    func writeToRealm() {
+        
+        try! uiRealm.write({
+            uiRealm.add(self, update: .all)
+        })
+    }
+    
+    func updateToRealm() {
+        
+        try! uiRealm.write({
+            uiRealm.add(self, update: .modified)
+        })
+    }
 }

@@ -37,6 +37,8 @@ struct ExploreView: View {
     @State var searchText = String()
     @State var isSearching: Bool = false
     
+    @ObservedObject var dataHandler: DataHandler
+    
     var body: some View {
         
         NavigationView {
@@ -54,7 +56,7 @@ struct ExploreView: View {
                 if isSearching {
                     List {
                         ForEach(0..<3, id: \.self) { num in
-                            PostCell()
+                            PostCell(currentPost: Post())
                                 .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                         }
                     }
@@ -93,6 +95,6 @@ struct PostIdentifiable: Identifiable {
 
 struct ExploreView_Previews: PreviewProvider {
     static var previews: some View {
-        ExploreView().previewDevice("iPhone 11")
+        ExploreView(dataHandler: DataHandler()).previewDevice("iPhone 11")
     }
 }

@@ -9,7 +9,7 @@ struct SinglePostView: View {
     var body: some View {
         
         List {
-            PostCell()
+            PostCell(currentPost: Post())
             .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
             
         }

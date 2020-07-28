@@ -3,9 +3,7 @@ import SwiftUI
 
 struct NotificationView: View {
     
-    init() {
-        UITableView.appearance().separatorStyle = .none
-    }
+    @ObservedObject var dataHandler: DataHandler
     
     var body: some View {
         
@@ -18,12 +16,14 @@ struct NotificationView: View {
                 
             }
             .navigationBarTitle("Notifications")
+        }.onAppear {
+            UITableView.appearance().separatorStyle = .none
         }
     }
 }
 
 struct NotificationView_Previews: PreviewProvider {
     static var previews: some View {
-        NotificationView()
+        NotificationView(dataHandler: DataHandler())
     }
 }

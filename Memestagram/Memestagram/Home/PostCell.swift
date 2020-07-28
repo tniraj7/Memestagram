@@ -2,6 +2,8 @@ import SwiftUI
 
 struct PostCell: View {
     
+    var currentPost: Post
+    
     var body: some View {
         VStack {
             VStack {
@@ -19,7 +21,7 @@ struct PostCell: View {
                     VStack(alignment: .leading) {
                         Text("Build That App")
                         
-                        Text("1 hr ago")
+                        Text(self.currentPost.date?.formatDate() ?? "")
                             .font(.caption)
                             .foregroundColor(.gray)
                     }
@@ -29,7 +31,7 @@ struct PostCell: View {
                 
                 Divider().padding(.horizontal)
                 
-                Text("eafeajfhbeafeahbfhaebfheab hjaebfjhbeafbhebfjaeb  feahjbfebjaef")
+                Text(self.currentPost.comment)
                     .lineLimit(nil)
                     .padding()
             }
@@ -43,6 +45,6 @@ struct PostCell: View {
 
 struct PostCell_Previews: PreviewProvider {
     static var previews: some View {
-        PostCell().previewDevice("iPhone 11")
+        PostCell(currentPost: Post()).previewDevice("iPhone 11")
     }
 }

@@ -1,6 +1,6 @@
 import SwiftUI
 import RealmSwift
-import  Firebase
+import Firebase
 
 struct PostingView: View {
     
@@ -8,6 +8,8 @@ struct PostingView: View {
     @State private var isPresented: Bool =  false
     @State private var image: Image?
     @State private var uiImage: UIImage?
+    
+    @ObservedObject var dataHandler: DataHandler
     
     var body: some View {
         
@@ -17,14 +19,14 @@ struct PostingView: View {
                     
                     if self.image != nil {
                         self.image!
-                        .resizable()
-                        .frame(width: 80, height: 80, alignment: .center)
-                        .aspectRatio(contentMode: .fill)
-                        .clipped()
-                        .cornerRadius(5)
+                            .resizable()
+                            .frame(width: 80, height: 80, alignment: .center)
+                            .aspectRatio(contentMode: .fill)
+                            .clipped()
+                            .cornerRadius(5)
                     } else {
                         Image(systemName: "folder.circle.fill")
-                             .resizable()
+                            .resizable()
                             .frame(width: 40, height: 40, alignment: .center)
                             .aspectRatio(contentMode: .fill)
                             .clipped()
@@ -51,9 +53,9 @@ struct PostingView: View {
                 
                 Button(action: self.submit , label:  {
                     Text("Submit")
-                    .bold()
+                        .bold()
                         .foregroundColor(.white)
-                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 50, maxHeight: 50, alignment: .center)
+                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 50, maxHeight: 50, alignment: .center)
                 })
                 .background(Color.blue)
                 .cornerRadius(5)
@@ -103,6 +105,6 @@ struct PostingView: View {
 
 struct PostingPage_Previews: PreviewProvider {
     static var previews: some View {
-        PostingView()
+        PostingView(dataHandler: DataHandler())
     }
 }

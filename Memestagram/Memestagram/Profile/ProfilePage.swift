@@ -2,6 +2,8 @@ import SwiftUI
 
 struct ProfileView: View {
     
+    @ObservedObject var dataHandler: DataHandler
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -21,13 +23,13 @@ struct ProfileView: View {
             .navigationBarItems(trailing: NavigationLink(destination: SettingsView(),
                                                          label: { Image(systemName: "slider.horizontal.3") .accentColor(.black)}))
                 
-                .navigationBarTitle("Profile")
+            .navigationBarTitle("Profile", displayMode: .inline)
         }
     }
 }
 
 struct ProfilePage_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView(dataHandler: DataHandler())
     }
 }

@@ -15,6 +15,13 @@ extension Formatter {
 
 extension Date {
     var iso8601: String { return Formatter.iso8601.string(from: self) }
+    
+    func formatDate() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .short
+        return dateFormatter.string(from: self)
+    }
 }
 
 extension String {

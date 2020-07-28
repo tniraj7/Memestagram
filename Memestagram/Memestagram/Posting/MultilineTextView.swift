@@ -6,6 +6,7 @@ struct MultilineTextView: UIViewRepresentable {
 
     func makeUIView(context: Context) -> UITextView {
         let view = UITextView()
+        view.delegate = context.coordinator
         view.isScrollEnabled = true
         view.isEditable = true
         view.isUserInteractionEnabled = true
@@ -15,5 +16,22 @@ struct MultilineTextView: UIViewRepresentable {
 
     func updateUIView(_ uiView: UITextView, context: Context) {
         uiView.text = text
+    }
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator(parent: self)
+    }
+}
+
+class Coordinator: NSObject, UITextViewDelegate {
+    
+    var parent: MultilineTextView
+    
+    init(parent: MultilineTextView) {
+        self.parent = parent
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        self.parent.text = textView.text
     }
 }

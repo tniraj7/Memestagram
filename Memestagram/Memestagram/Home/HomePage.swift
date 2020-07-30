@@ -19,8 +19,6 @@ struct HomeView: View {
                         .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                 }
             }.navigationBarTitle(navTitle, displayMode: .inline)
-        }.onAppear {
-            UITableView.appearance().separatorStyle = .none
         }
     }
 }

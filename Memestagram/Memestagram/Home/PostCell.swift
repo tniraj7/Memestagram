@@ -3,14 +3,21 @@ import SwiftUI
 struct PostCell: View {
     
     var currentPost: Post
+    @Environment(\.imageCache) var cache: ImageCache
     
     var body: some View {
         VStack {
             VStack {
-                Image("boats")
-                    .resizable()
-                    .frame(height: 600, alignment: .center)
-                    .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.25), radius: 10, x: 2, y: 2)
+                
+                if URL(string: self.currentPost.imageUrl) != nil {
+                    AsyncImage(
+                        url: URL(string: self.currentPost.imageUrl)!,
+                        cache: self.cache, placeholder: Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)), configuration: {
+                            $0
+                                .resizable()
+                                .frame(height: (UIScreen.main.bounds.width - 20) * CGFloat(currentPost.aspectRatio),
+                                       alignment: .center) as! Image })
+                }
                 
                 HStack {
                     Image("boats")
@@ -32,12 +39,13 @@ struct PostCell: View {
                 Divider().padding(.horizontal)
                 
                 Text(self.currentPost.comment)
+                    .frame( maxWidth: .infinity, alignment: .leading)
                     .lineLimit(nil)
                     .padding()
             }
             .background(Color.white)
-            .cornerRadius(20)
-            .shadow(radius: 10)
+            .cornerRadius(10)
+            .shadow(radius: 1)
             .padding()
         }
     }

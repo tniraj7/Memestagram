@@ -74,7 +74,7 @@ struct PostingView: View {
     }
     
     func submit() {
-        guard let imageData = uiImage?.jpegData(compressionQuality: 0.1) else { return }
+        guard let imageData = uiImage?.jpegData(compressionQuality: 0.08) else { return }
         let postId = UUID().uuidString
         let ref = Storage.storage().reference().child("posts").child(postId)
         

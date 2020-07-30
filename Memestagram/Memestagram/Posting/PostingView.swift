@@ -52,7 +52,7 @@ struct PostingView: View {
                 Spacer()
                 
                 Button(action: self.submit , label:  {
-                    Text("Submit")
+                    Text("Post")
                         .bold()
                         .foregroundColor(.white)
                         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 50, maxHeight: 50, alignment: .center)

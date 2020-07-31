@@ -3,7 +3,7 @@ import SwiftUI
 struct HomeView: View {
     
     @ObservedObject var dataHandler: DataHandler
-    private var navTitle = "Memestagram"
+    private var navBarTitle = "Memestagram"
     
     init(dataHandler: DataHandler) {
         UITableView.appearance().separatorStyle = .none
@@ -18,7 +18,7 @@ struct HomeView: View {
                     PostCell(currentPost: post)
                         .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                 }
-            }.navigationBarTitle(navTitle, displayMode: .inline)
+            }.navigationBarTitle(navBarTitle, displayMode: .inline)
         }
     }
 }

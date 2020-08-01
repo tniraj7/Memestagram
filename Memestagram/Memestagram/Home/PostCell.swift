@@ -4,7 +4,6 @@ import SDWebImageSwiftUI
 struct PostCell: View {
     
     var currentPost: Post
-    @Environment(\.imageCache) var cache: ImageCache
     
     var body: some View {
         VStack {

@@ -12,11 +12,12 @@ struct PostCell: View {
                 if URL(string: self.currentPost.imageUrl) != nil {
                     AsyncImage(
                         url: URL(string: self.currentPost.imageUrl)!,
-                        cache: self.cache, placeholder: Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)), configuration: {
+                        cache: self.cache,
+                        placeholder: Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)),
+                        configuration: {
                             $0.resizable()
                                 .frame(height: (UIScreen.main.bounds.width - 20) * CGFloat(currentPost.aspectRatio),
                                        alignment: .center) as! Image
-                            
                         }
                     )
                 }

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,10 +27,6 @@
 		3421DC8924CAC56D009F227A /* NotificationCell_Like.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3421DC8824CAC56D009F227A /* NotificationCell_Like.swift */; };
 		3421DC8B24CACA70009F227A /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3421DC8A24CACA70009F227A /* ProfileHeaderView.swift */; };
 		3435AF5D24CA122000CC3F2F /* QGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3435AF5C24CA122000CC3F2F /* QGrid.swift */; };
-		343CA6C224D2FEE5000CF725 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343CA6BE24D2FEE3000CF725 /* ImageLoader.swift */; };
-		343CA6C324D2FEE5000CF725 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343CA6BF24D2FEE4000CF725 /* ImageCache.swift */; };
-		343CA6C424D2FEE5000CF725 /* EnvironmentValues+ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343CA6C024D2FEE4000CF725 /* EnvironmentValues+ImageCache.swift */; };
-		343CA6C524D2FEE5000CF725 /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343CA6C124D2FEE5000CF725 /* AsyncImage.swift */; };
 		344D522C24CB1EDA007CD0A1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344D522B24CB1EDA007CD0A1 /* Extensions.swift */; };
 		348EB31524CAE68200DB23FC /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348EB31424CAE68200DB23FC /* LoginPage.swift */; };
 		34A0037224CAB2D50000BC9A /* MultilineTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A0037124CAB2D50000BC9A /* MultilineTextView.swift */; };
@@ -62,10 +58,6 @@
 		3421DC8824CAC56D009F227A /* NotificationCell_Like.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell_Like.swift; sourceTree = "<group>"; };
 		3421DC8A24CACA70009F227A /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		3435AF5C24CA122000CC3F2F /* QGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QGrid.swift; sourceTree = "<group>"; };
-		343CA6BE24D2FEE3000CF725 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
-		343CA6BF24D2FEE4000CF725 /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
-		343CA6C024D2FEE4000CF725 /* EnvironmentValues+ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+ImageCache.swift"; sourceTree = "<group>"; };
-		343CA6C124D2FEE5000CF725 /* AsyncImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
 		344D522B24CB1EDA007CD0A1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		348EB31424CAE68200DB23FC /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
 		34A0037124CAB2D50000BC9A /* MultilineTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineTextView.swift; sourceTree = "<group>"; };
@@ -106,7 +98,6 @@
 		3420CEA324CA003700F4B64D /* Memestagram */ = {
 			isa = PBXGroup;
 			children = (
-				343CA6C724D2FF11000CF725 /* AsyncImage */,
 				348EB31624CAE6A700DB23FC /* Login */,
 				3420CEC424CA015200F4B64D /* Home */,
 				3420CEC524CA016500F4B64D /* Explore */,
@@ -182,17 +173,6 @@
 				3421DC8824CAC56D009F227A /* NotificationCell_Like.swift */,
 			);
 			path = Notification;
-			sourceTree = "<group>";
-		};
-		343CA6C724D2FF11000CF725 /* AsyncImage */ = {
-			isa = PBXGroup;
-			children = (
-				343CA6C124D2FEE5000CF725 /* AsyncImage.swift */,
-				343CA6C024D2FEE4000CF725 /* EnvironmentValues+ImageCache.swift */,
-				343CA6BF24D2FEE4000CF725 /* ImageCache.swift */,
-				343CA6BE24D2FEE3000CF725 /* ImageLoader.swift */,
-			);
-			path = AsyncImage;
 			sourceTree = "<group>";
 		};
 		348EB31624CAE6A700DB23FC /* Login */ = {
@@ -298,17 +278,13 @@
 				3420CEBF24CA00EB00F4B64D /* NotificationView.swift in Sources */,
 				3421DC8B24CACA70009F227A /* ProfileHeaderView.swift in Sources */,
 				3435AF5D24CA122000CC3F2F /* QGrid.swift in Sources */,
-				343CA6C224D2FEE5000CF725 /* ImageLoader.swift in Sources */,
 				3420CEB924CA009300F4B64D /* HomePage.swift in Sources */,
 				34BCFA0C24CDCE3200F48AA6 /* RealmObject.swift in Sources */,
-				343CA6C324D2FEE5000CF725 /* ImageCache.swift in Sources */,
 				344D522C24CB1EDA007CD0A1 /* Extensions.swift in Sources */,
 				3420CECA24CA029400F4B64D /* PostCell.swift in Sources */,
 				3415556924CB056700B1B7E4 /* TabViewController.swift in Sources */,
 				3415556B24CB09F200B1B7E4 /* SinglePostView.swift in Sources */,
 				3421DC8924CAC56D009F227A /* NotificationCell_Like.swift in Sources */,
-				343CA6C524D2FEE5000CF725 /* AsyncImage.swift in Sources */,
-				343CA6C424D2FEE5000CF725 /* EnvironmentValues+ImageCache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

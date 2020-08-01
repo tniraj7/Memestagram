@@ -13,10 +13,12 @@ struct PostCell: View {
                     AsyncImage(
                         url: URL(string: self.currentPost.imageUrl)!,
                         cache: self.cache, placeholder: Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)), configuration: {
-                            $0
-                                .resizable()
+                            $0.resizable()
                                 .frame(height: (UIScreen.main.bounds.width - 20) * CGFloat(currentPost.aspectRatio),
-                                       alignment: .center) as! Image })
+                                       alignment: .center) as! Image
+                            
+                        }
+                    )
                 }
                 
                 HStack {

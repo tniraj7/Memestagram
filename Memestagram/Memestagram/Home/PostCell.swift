@@ -1,4 +1,5 @@
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct PostCell: View {
     
@@ -10,16 +11,18 @@ struct PostCell: View {
             VStack {
                 
                 if URL(string: self.currentPost.imageUrl) != nil {
-                    AsyncImage(
-                        url: URL(string: self.currentPost.imageUrl)!,
-                        cache: self.cache,
-                        placeholder: Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)),
-                        configuration: {
-                            $0.resizable()
-                                .frame(height: (UIScreen.main.bounds.width - 20) * CGFloat(currentPost.aspectRatio),
-                                       alignment: .center) as! Image
-                        }
-                    )
+                    AnimatedImage(url:  URL(string: self.currentPost.imageUrl))
+                            .onFailure { error in
+                                
+                            }
+                            .resizable()
+                            .placeholder(UIImage(systemName: "photo"))
+                            .placeholder {
+                                Rectangle().foregroundColor(Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)))
+                            }
+                            .indicator(SDWebImageActivityIndicator.medium)
+                            .transition(.fade)
+                            .scaledToFit()
                 }
                 
                 HStack {

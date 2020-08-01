@@ -51,7 +51,7 @@ struct PostCell: View {
             }
             .background(Color.white)
             .cornerRadius(10)
-            .shadow(radius: 1)
+            .shadow(radius: 10)
             .padding()
         }
     }

@@ -12,5 +12,6 @@ target 'Memestagram' do
 	pod 'Firebase/Database'
 	pod 'Firebase/Storage'
 	pod 'RealmSwift'
+  pod 'SDWebImageSwiftUI'
 end
 

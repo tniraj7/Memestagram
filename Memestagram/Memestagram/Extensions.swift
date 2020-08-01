@@ -52,7 +52,7 @@ func handlePostDictionary(dict: [String: AnyObject]) -> Post {
     post.comment = dict["comment"] as? String ?? ""
     post.date = (dict["date"] as? String ?? "").iso8601
     post.aspectRatio = dict["aspectRatio"] as? Double ?? 1.0
-    post.imageUrl = dict["imgageUrl"] as? String ?? ""
+    post.imageUrl = dict["imageUrl"] as? String ?? ""
     post.writeToRealm()
     
     return post

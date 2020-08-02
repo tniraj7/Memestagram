@@ -24,8 +24,8 @@ struct ExploreView: View {
                 
                 if isSearching {
                     List {
-                        ForEach(0..<3, id: \.self) { num in
-                            PostCell(currentPost: Post())
+                        ForEach(self.dataHandler.searchPosts, id: \.id) { post in
+                            PostCell(currentPost: post)
                                 .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                         }
                     }
@@ -58,6 +58,7 @@ struct ExploreView: View {
             self.isSearching = false
         } else {
             self.isSearching = true
+            self.dataHandler.loadPostsFrom(keyword: self.searchText.lowercased())
         }
     }
 }

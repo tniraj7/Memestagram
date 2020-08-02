@@ -11,16 +11,16 @@ struct PostCell: View {
                 
                 if URL(string: self.currentPost.imageUrl) != nil {
                     AnimatedImage(url:  URL(string: self.currentPost.imageUrl))
-                            .onFailure { error in
-                                
-                            }
-                            .resizable()
-                            .placeholder {
-                                Rectangle().foregroundColor(Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)))
-                            }
-                            .indicator(SDWebImageActivityIndicator.medium)
-                            .transition(.fade)
-                            .scaledToFit()
+                        .onFailure { error in
+                            
+                        }
+                        .resizable()
+                        .placeholder {
+                            Rectangle().foregroundColor(Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)))
+                        }
+                        .indicator(SDWebImageActivityIndicator.medium)
+                        .transition(.fade)
+                        .scaledToFit()
                 }
                 
                 HStack {

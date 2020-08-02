@@ -1,4 +1,5 @@
 import SwiftUI
+import Firebase
 
 struct SignupView: View {
     
@@ -50,7 +51,31 @@ struct SignupView: View {
         }
     }
     
-    func submit() { self.isPresented.toggle() }
+    func submit() {
+        self.isPresented.toggle()
+        if password1 == password2 {
+            Auth.auth().createUser(withEmail: self.email, password: self.password1) { (result, error) in
+                if error == nil {
+                    let user = UserObject()
+                    user.id = result?.user.uid ?? ""
+                    user.username = self.username
+                    user.isLoggedIn.value = true
+                    user.writeToRealm()
+                    
+                    
+                    let ref = Database.database().reference().child("user")
+                    ref.child(user.id).updateChildValues([
+                        "uid" : user.id,
+                        "username" : self.username
+                    ])
+                    
+                } else {
+                    print(error?.localizedDescription)
+                }
+            }
+        }
+        
+    }
 }
 
 struct SignupView_Previews: PreviewProvider {

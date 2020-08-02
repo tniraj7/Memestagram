@@ -1,4 +1,5 @@
 import SwiftUI
+import Firebase
 
 struct LoginView: View {
     
@@ -12,7 +13,7 @@ struct LoginView: View {
             
             ZStack {
                 LinearGradient(gradient: Gradient(colors: [.purple, .blue]), startPoint: .leading,
-                    endPoint: .trailing)
+                               endPoint: .trailing)
                     .frame(height: 200, alignment: .top)
                     .edgesIgnoringSafeArea(.top)
                     .shadow(radius: 15)
@@ -26,6 +27,17 @@ struct LoginView: View {
             
             TextField("Email", text: self.$email).padding()
             SecureField("Password", text: self.$password).padding()
+            
+            Button(action: self.login , label:  {
+                Text("Submit")
+                .bold()
+                    .foregroundColor(.white)
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 50, maxHeight: 50, alignment: .center)
+            })
+            .background(Color.blue)
+            .cornerRadius(5)
+            .padding()
+            
             HStack {
                 Text("Don't have an account ?")
                 Button(action: self.signUp, label: { Text(" Sign up now!") })
@@ -35,6 +47,19 @@ struct LoginView: View {
             SignupView(isPresented: self.$isPresented)
         })
         
+    }
+    
+    func login() {
+        Auth.auth().signIn(withEmail: self.email, password: self.password) { (result, error) in
+            if error == nil {
+                let user = UserObject()
+                user.id = result?.user.uid ?? ""
+                user.isLoggedIn.value = true
+                user.writeToRealm()
+            } else {
+                print(error?.localizedDescription)
+            }
+        }
     }
     
     func signUp() { self.isPresented.toggle() }

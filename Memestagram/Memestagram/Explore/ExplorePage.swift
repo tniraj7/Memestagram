@@ -1,36 +1,5 @@
 import SwiftUI
-
-var exampleData = [
-    PostIdentifiable(),PostIdentifiable(),
-    PostIdentifiable(),PostIdentifiable(),
-    PostIdentifiable(),PostIdentifiable(),
-    PostIdentifiable(),PostIdentifiable(),
-    PostIdentifiable(),PostIdentifiable(),
-    PostIdentifiable(),PostIdentifiable(),
-    PostIdentifiable(),PostIdentifiable(),
-    PostIdentifiable(),PostIdentifiable(),
-    PostIdentifiable(),PostIdentifiable(),
-    PostIdentifiable(),PostIdentifiable(),
-    PostIdentifiable(),PostIdentifiable(),
-    PostIdentifiable(),PostIdentifiable(),
-    PostIdentifiable(),PostIdentifiable(),
-    PostIdentifiable(),PostIdentifiable(),
-    PostIdentifiable(),PostIdentifiable(),
-    PostIdentifiable(),PostIdentifiable(),
-    PostIdentifiable(),PostIdentifiable(),
-    PostIdentifiable(),PostIdentifiable(),
-    PostIdentifiable(),PostIdentifiable(),
-    PostIdentifiable(),PostIdentifiable(),
-    PostIdentifiable(),PostIdentifiable(),
-    PostIdentifiable(),PostIdentifiable(),
-    PostIdentifiable(),PostIdentifiable(),
-    PostIdentifiable(),PostIdentifiable(),
-    PostIdentifiable(),PostIdentifiable(),
-    PostIdentifiable(),PostIdentifiable(),
-    PostIdentifiable(),PostIdentifiable(),
-    PostIdentifiable(),PostIdentifiable(),
-    PostIdentifiable(),PostIdentifiable(),
-]
+import SDWebImageSwiftUI
 
 struct ExploreView: View {
     
@@ -61,15 +30,21 @@ struct ExploreView: View {
                         }
                     }
                 } else {
-                    QGrid(exampleData, columns: 3, columnsInLandscape: nil, vSpacing: 0, hSpacing: 0, vPadding: 0, hPadding: 0, isScrollable: true, showScrollIndicators: false, content: { post in
+                    QGrid(self.dataHandler.explorePagePosts, columns: 3, columnsInLandscape: nil, vSpacing: 0, hSpacing: 0, vPadding: 0, hPadding: 0, isScrollable: true, showScrollIndicators: false, content: { post in
                         
-                        NavigationLink(destination: SinglePostView(), label:  {
-                            post.image
+                        NavigationLink(destination: SinglePostView(currentPost: post.post), label:  {
+                            
+                            AnimatedImage(url:  URL(string: post.post.imageUrl))
+                                .onFailure { error in
+                                    
+                                }
+                                .resizable()
+                                .placeholder {
+                                    Rectangle().foregroundColor(Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)))
+                                }
+                                .indicator(SDWebImageActivityIndicator.medium)
+                                .transition(.fade)
                                 .aspectRatio(contentMode: .fill)
-                                .frame(width: UIScreen.main.bounds.width / 3,
-                                       height: UIScreen.main.bounds.height / 3,
-                                       alignment: .center)
-                                .clipped()
                         }).buttonStyle(PlainButtonStyle())
                     })
                 }
@@ -89,7 +64,7 @@ struct ExploreView: View {
 
 struct PostIdentifiable: Identifiable {
     var id = UUID()
-    var image = Image("boats").resizable()
+    var post: Post
     
 }
 

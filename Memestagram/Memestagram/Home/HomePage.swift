@@ -14,7 +14,7 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(self.dataHandler.homePagePost, id: \.id) { post in
+                ForEach(self.dataHandler.homePagePosts, id: \.id) { post in
                     PostCell(currentPost: post)
                         .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                 }

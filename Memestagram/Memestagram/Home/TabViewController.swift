@@ -2,7 +2,7 @@ import SwiftUI
 
 struct TabViewController: View {
     
-    @EnvironmentObject var dataHandler: DataHandler
+    @ObservedObject var dataHandler: DataHandler
     
     @State private var selected: Int = 0
     
@@ -37,11 +37,5 @@ struct TabViewController: View {
             }.tag(4)
             
         }.accentColor(.black)
-    }
-}
-
-struct TabView_Previews: PreviewProvider {
-    static var previews: some View {
-        TabViewController()
     }
 }

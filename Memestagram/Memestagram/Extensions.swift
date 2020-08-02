@@ -57,3 +57,11 @@ func handlePostDictionary(dict: [String: AnyObject]) -> Post {
     
     return post
 }
+
+func handleUserDictionary(dict: [String: AnyObject]) -> UserObject {
+    let user = UserObject()
+    user.id = dict["uid"] as? String ?? ""
+    user.username = dict["username"] as? String ?? ""
+    user.writeToRealm()
+    return user
+}

@@ -86,13 +86,21 @@ struct PostingView: View {
                         let imageWidth = self.uiImage?.size.width ?? 0
                         let aspectRatio = Double(imageHeight / imageWidth)
                         
+                        var searchTerms = [String : Bool]()
+                        
+                        for word in self.description.components(separatedBy: " ") {
+                            searchTerms[word.lowercased()] = true
+                        }
+                        searchTerms[self.description.lowercased()] = true
+                        
                         Database.database().reference().child("posts").child(postId)
                             .updateChildValues([
                                 "imageUrl": url?.absoluteString ?? "",
                                 "id": postId,
                                 "comment": self.description,
                                 "aspectRatio" : aspectRatio,
-                                "date" : Date().iso8601
+                                "date" : Date().iso8601,
+                                "searchTerms" : searchTerms
                             ])
                     }
                 }

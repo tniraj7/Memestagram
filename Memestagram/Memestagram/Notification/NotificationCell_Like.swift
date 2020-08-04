@@ -14,7 +14,7 @@ struct NotificationCell_Like: View {
                     .frame(width: 50, height: 50, alignment: .center)
                     .cornerRadius(5)
                     
-                    NavigationLink(destination: SinglePostView(), label:  {
+                    NavigationLink(destination: SinglePostView(currentPost: Post() ), label:  {
                         EmptyView()
                     })
                     .buttonStyle(PlainButtonStyle())

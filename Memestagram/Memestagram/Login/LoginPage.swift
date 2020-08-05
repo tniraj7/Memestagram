@@ -6,6 +6,7 @@ struct LoginView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var isPresented: Bool = false
+    @Binding var isLoggedIn: Bool
     
     var body: some View {
         
@@ -44,7 +45,7 @@ struct LoginView: View {
             }
             Spacer()
         }.sheet(isPresented: self.$isPresented, content: {
-            SignupView(isPresented: self.$isPresented)
+            SignupView(isPresented: self.$isPresented, isLoggedIn: self.$isLoggedIn)
         })
         
     }
@@ -56,6 +57,7 @@ struct LoginView: View {
                 user.id = result?.user.uid ?? ""
                 user.isLoggedIn.value = true
                 user.writeToRealm()
+                self.isLoggedIn = true
             } else {
                 print(error?.localizedDescription)
             }
@@ -63,10 +65,4 @@ struct LoginView: View {
     }
     
     func signUp() { self.isPresented.toggle() }
-}
-
-struct LoginView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginView()
-    }
 }

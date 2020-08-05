@@ -17,16 +17,16 @@ struct LoadingView: View {
                 
             } else {
                 if isLoggedIn {
-                    TabViewController(dataHandler: self.dataHandler)
+                    TabViewController(dataHandler: self.dataHandler, isLoggedIn: self.$isLoggedIn)
                 } else {
-                    LoginView()
+                    LoginView(isLoggedIn: self.$isLoggedIn)
                 }
             }
             
         }.onAppear {
             self.dataHandler.checkIfLoggedIn { (isLoggedIn) in
                 
-                if isLoggedIn {
+                if isLoggedIn == true {
                     self.isLoggedIn = true
                 } else {
                     self.isLoggedIn = false

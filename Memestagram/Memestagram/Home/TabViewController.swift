@@ -3,6 +3,7 @@ import SwiftUI
 struct TabViewController: View {
     
     @ObservedObject var dataHandler: DataHandler
+    @Binding var isLoggedIn: Bool
     
     @State private var selected: Int = 0
     
@@ -31,7 +32,7 @@ struct TabViewController: View {
                 Text("Notifications")
             }.tag(3)
             
-            ProfileView(dataHandler: dataHandler).tabItem {
+            ProfileView(dataHandler: dataHandler, isLoggedIn: self.$isLoggedIn).tabItem {
                 Image(systemName: "person.circle.fill")
                 Text("Profile")
             }.tag(4)

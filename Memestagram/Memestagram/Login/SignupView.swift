@@ -9,9 +9,11 @@ struct SignupView: View {
     @State private var password2: String  = ""
     
     @Binding private var isPresented: Bool
+    @Binding private var isLoggedIn: Bool
     
-    init(isPresented: Binding<Bool>) {
+    init(isPresented: Binding<Bool>, isLoggedIn: Binding<Bool>) {
         _isPresented = isPresented
+        _isLoggedIn = isLoggedIn
         UITableView.appearance().separatorStyle = .none
     }
     
@@ -69,17 +71,12 @@ struct SignupView: View {
                         "username" : self.username
                     ])
                     
+                    self.isLoggedIn = true
                 } else {
                     print(error?.localizedDescription)
                 }
             }
         }
         
-    }
-}
-
-struct SignupView_Previews: PreviewProvider {
-    static var previews: some View {
-        SignupView(isPresented: .constant(false))
     }
 }

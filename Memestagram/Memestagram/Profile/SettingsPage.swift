@@ -1,4 +1,6 @@
 import SwiftUI
+import Firebase
+import RealmSwift
 
 struct SettingsView: View {
     
@@ -7,6 +9,7 @@ struct SettingsView: View {
     @State private var uiImage: UIImage?
     
     @State private var username: String = ""
+    @Binding var isLoggedIn: Bool
     
     var body: some View {
         VStack {
@@ -54,7 +57,7 @@ struct SettingsView: View {
             
             Spacer()
             
-            Button(action: self.submit , label:  {
+            Button(action: self.logout , label:  {
                 Text("Logout")
                 .bold()
                     .foregroundColor(.white)
@@ -84,10 +87,12 @@ struct SettingsView: View {
     func submit() {
         
     }
-}
-
-struct SettingsPage_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsView()
+    
+    func logout() {
+        self.isLoggedIn = false
+        try! Auth.auth().signOut()
+        try! uiRealm.write({ 
+            uiRealm.deleteAll()
+        })
     }
 }

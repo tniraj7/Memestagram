@@ -32,7 +32,7 @@ struct TabViewController: View {
                 Text("Notifications")
             }.tag(3)
             
-            ProfileView(dataHandler: dataHandler, isLoggedIn: self.$isLoggedIn).tabItem {
+            ProfileView(dataHandler: dataHandler, isLoggedIn: self.$isLoggedIn, currentUser: self.dataHandler.loggedInUser).tabItem {
                 Image(systemName: "person.circle.fill")
                 Text("Profile")
             }.tag(4)

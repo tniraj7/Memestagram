@@ -100,7 +100,8 @@ struct PostingView: View {
                                 "comment": self.description,
                                 "aspectRatio" : aspectRatio,
                                 "date" : Date().iso8601,
-                                "searchTerms" : searchTerms
+                                "searchTerms" : searchTerms,
+                                "uid" : self.dataHandler.loggedInUser.id
                             ])
                     }
                 }

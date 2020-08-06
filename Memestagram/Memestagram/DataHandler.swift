@@ -9,6 +9,8 @@ class DataHandler: ObservableObject {
     @Published var explorePagePosts = [PostIdentifiable]()
     @Published var searchPosts = [Post]()
     @Published var loggedInUser = UserObject()
+    @Published var TemporaryPosts = [PostIdentifiable]()
+    @Published var profilePagePosts = [PostIdentifiable]()
     
     init() {
         self.loadHomePagePosts()
@@ -24,6 +26,31 @@ class DataHandler: ObservableObject {
                 self.homePagePosts.sort { $0.date!.compare($1.date!) == .orderedDescending }
             }
         }
+    }
+    
+    func loadPostsFor(_ user: String) {
+        
+        if user == loggedInUser.id {
+            let ref = Database.database().reference()
+            ref.child("posts").queryOrdered(byChild: "uid").queryEqual(toValue: user).observe(.value) { (snapshot) in
+                for snap in snapshot.children.allObjects as! [DataSnapshot] {
+                    guard let dict = snap.value as? [String : AnyObject]  else { return }
+                    self.profilePagePosts.append(PostIdentifiable(post: handlePostDictionary(dict: dict)))
+                    self.profilePagePosts.sort { $0.post.date!.compare($1.post.date!) == .orderedDescending }
+                }
+            }
+        } else {
+            
+            let ref = Database.database().reference()
+            ref.child("posts").queryOrdered(byChild: "uid").queryEqual(toValue: user).observe(.value) { (snapshot) in
+                for snap in snapshot.children.allObjects as! [DataSnapshot] {
+                    guard let dict = snap.value as? [String : AnyObject]  else { return }
+                    self.TemporaryPosts.append(PostIdentifiable(post: handlePostDictionary(dict: dict)))
+                    self.TemporaryPosts.sort { $0.post.date!.compare($1.post.date!) == .orderedDescending }
+                }
+            }
+        }
+
     }
     
     func loadExplorePagePosts() {

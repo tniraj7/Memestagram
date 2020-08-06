@@ -25,7 +25,15 @@ class UserObject: Object {
     var isLoggedIn = RealmOptional<Bool>()
     var isFollowing = RealmOptional<Bool>()
     
+    var followers = List<StringValue>()
+    var followings = List<StringValue>()
+    
+    
     override class func primaryKey() -> String {
         return "id"
     }
+}
+
+class StringValue: Object {
+    @objc dynamic var String: String = ""
 }

@@ -16,14 +16,14 @@ struct LoadingView: View {
                 Text("Memestagram").bold().font(.largeTitle)
                 
             } else {
-                if isLoggedIn {
+                if isLoggedIn == true  {
                     TabViewController(dataHandler: self.dataHandler, isLoggedIn: self.$isLoggedIn)
                 } else {
                     LoginView(isLoggedIn: self.$isLoggedIn)
                 }
             }
             
-        }.onAppear {
+        }.onAppear() {
             self.dataHandler.checkIfLoggedIn { (isLoggedIn) in
                 
                 if isLoggedIn == true {
@@ -35,11 +35,5 @@ struct LoadingView: View {
             }
         }
         
-    }
-}
-
-struct LoadingView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoadingView()
     }
 }

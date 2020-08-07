@@ -4,6 +4,7 @@ import RealmSwift
 
 struct SettingsView: View {
     
+    @ObservedObject var dataHandler : DataHandler
     @State private var isPresented: Bool =  false
     @State private var image: Image?
     @State private var uiImage: UIImage?
@@ -85,7 +86,23 @@ struct SettingsView: View {
     }
     
     func submit() {
-        
+        guard let imageData = uiImage?.jpegData(compressionQuality: 0.1) else { return }
+        let ref = Storage.storage().reference().child("users").child(self.dataHandler.loggedInUser.id)
+        ref.putData(imageData, metadata: nil) { (metadata, error) in
+            if error == nil {
+                ref.downloadURL { (url, error) in
+                    if error == nil {
+                        Database.database().reference().child("users").child(self.dataHandler.loggedInUser.id).updateChildValues(["profileImageUrl" : url?.absoluteString ?? ""])
+                        
+                        try! uiRealm.write({
+                            self.dataHandler.loggedInUser.profileImageUrl = url?.absoluteString ?? ""
+                        })
+                    }
+                }
+            } else {
+                print(error)
+            }
+        }
     }
     
     func logout() {

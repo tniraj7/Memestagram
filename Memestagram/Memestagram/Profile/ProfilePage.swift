@@ -32,8 +32,7 @@ struct ProfileView: View {
                         }).buttonStyle(PlainButtonStyle())
                     })
                 }
-                .navigationBarItems(trailing: NavigationLink(destination: SettingsView(isLoggedIn: self.$isLoggedIn),
-                                                                          label: { Image(systemName: "slider.horizontal.3") .accentColor(.black)}))
+                .navigationBarItems(trailing: NavigationLink(destination: SettingsView(dataHandler: self.dataHandler, isLoggedIn: self.$isLoggedIn),label: { Image(systemName: "slider.horizontal.3") .accentColor(.black)}))
                 .navigationBarTitle("Profile", displayMode: .inline)
             } else {
                 VStack {
